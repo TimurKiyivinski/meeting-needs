@@ -1,2 +1,14 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Overrides & variables
+$black: #000;
+$white: #fff;
+$padding: 80px;
 
+// Import Twitter Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Import Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome";
+
+.content {
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
