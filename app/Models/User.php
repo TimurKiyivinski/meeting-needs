@@ -28,4 +28,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Photo');
     }
+
+    public function events()
+    {
+        return $this->belongsToMany('App\Models\Event', 'user_events');
+    }
 }

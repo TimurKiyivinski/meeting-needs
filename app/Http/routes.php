@@ -108,6 +108,13 @@ Route::group([
             'show' => 'user.show',
         ]
     ]);
+    Route::resource('userevent', 'UserEventController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'userevent.index',
+            'show' => 'userevent.show',
+        ]
+    ]);
 });
 
 Route::group([
@@ -170,6 +177,14 @@ Route::group([
             'store' => 'user.store',
             'update' => 'user.update',
             'destroy' => 'user.destroy'
+        ]
+    ]);
+    Route::resource('userevent', 'UserEventController', [
+        'only' => ['store', 'update', 'destroy'],
+        'names' => [
+            'store' => 'userevent.store',
+            'update' => 'userevent.update',
+            'destroy' => 'userevent.destroy'
         ]
     ]);
 });
