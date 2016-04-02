@@ -38,7 +38,6 @@
 |
 */
 Route::group([
-    'middleware' => ['web'],
 ], function () {
     Route::auth();
 });
@@ -52,5 +51,125 @@ Route::group([
         'uses' => function() {
             return view('index');
         }
+    ]);
+});
+
+Route::group([
+    'as' => 'api::',
+    'prefix' => 'api',
+    'namespace' => 'API',
+], function () {
+    Route::resource('organization', 'OrganizationController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'organization.index',
+            'show' => 'organization.show',
+        ]
+    ]);
+    Route::resource('location', 'LocationController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'location.index',
+            'show' => 'location.show',
+        ]
+    ]);
+    Route::resource('event', 'EventController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'event.index',
+            'show' => 'event.show',
+        ]
+    ]);
+    Route::resource('recipient', 'RecipientController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'recipient.index',
+            'show' => 'recipient.show',
+        ]
+    ]);
+    Route::resource('photo', 'PhotoController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'photo.index',
+            'show' => 'photo.show',
+        ]
+    ]);
+    Route::resource('news', 'NewsController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'news.index',
+            'show' => 'news.show',
+        ]
+    ]);
+    Route::resource('user', 'UserController', [
+        'only' => ['index', 'show'],
+        'names' => [
+            'index' => 'user.index',
+            'show' => 'user.show',
+        ]
+    ]);
+});
+
+Route::group([
+    'middleware' => ['auth'],
+    'as' => 'api::',
+    'prefix' => 'api',
+    'namespace' => 'API',
+], function () {
+    Route::resource('organization', 'OrganizationController', [
+        'only' => ['store', 'update', 'destroy'],
+        'names' => [
+            'store' => 'organization.store',
+            'update' => 'organization.update',
+            'destroy' => 'organization.destroy'
+        ]
+    ]);
+    Route::resource('location', 'LocationController', [
+        'only' => ['store', 'update', 'destroy'],
+        'names' => [
+            'store' => 'location.store',
+            'update' => 'location.update',
+            'destroy' => 'location.destroy'
+        ]
+    ]);
+    Route::resource('event', 'EventController', [
+        'only' => ['store', 'update', 'destroy'],
+        'names' => [
+            'store' => 'event.store',
+            'update' => 'event.update',
+            'destroy' => 'event.destroy'
+        ]
+    ]);
+    Route::resource('recipient', 'RecipientController', [
+        'only' => ['store', 'update', 'destroy'],
+        'names' => [
+            'store' => 'recipient.store',
+            'update' => 'recipient.update',
+            'destroy' => 'recipient.destroy'
+        ]
+    ]);
+    Route::resource('photo', 'PhotoController', [
+        'only' => ['store', 'update', 'destroy'],
+        'names' => [
+            'store' => 'photo.store',
+            'update' => 'photo.update',
+            'destroy' => 'photo.destroy'
+        ]
+    ]);
+    Route::resource('news', 'NewsController', [
+        'only' => ['store', 'update', 'destroy'],
+        'names' => [
+            'store' => 'news.store',
+            'update' => 'news.update',
+            'destroy' => 'news.destroy'
+        ]
+    ]);
+    Route::resource('user', 'UserController', [
+        'only' => ['store', 'update', 'destroy'],
+        'names' => [
+            'store' => 'user.store',
+            'update' => 'user.update',
+            'destroy' => 'user.destroy'
+        ]
     ]);
 });
