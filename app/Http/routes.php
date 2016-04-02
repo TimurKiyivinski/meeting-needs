@@ -41,12 +41,6 @@ Route::group([
     'middleware' => ['web'],
 ], function () {
     Route::auth();
-    Route::get('register', function () {
-        return abort(404);
-    });
-    Route::post('register', function () {
-        return abort(404);
-    });
 });
 
 Route::group([
