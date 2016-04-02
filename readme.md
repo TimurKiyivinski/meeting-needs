@@ -25,3 +25,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Database
+Set up the SQL database with a Docker container as so:
+```
+docker run --name mariadb-needs -e MYSQL_ROOT_PASSWORD=meeting_needs -e MYSQL_DATABASE=meeting_needs -p 3306:3306 -d mariadb
+```
+Optionally, set up phpMyAdmin with the following command:
+```
+docker run --name phpmyadmin-needs -d --link mariadb-needs:db -p 8080:80 phpmyadmin/phpmyadmin
+```
