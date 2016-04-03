@@ -13,6 +13,7 @@
 </head>
 <body background="{{ asset('images/background.jpg') }}" style="height:100%;">
     <div class="wrapper">
+        <div class="banner-filler" style="background-image: url('{{ asset('images/banner.jpg') }}');"></div>
         <!--Index navigation bar-->
         @include('templates.navbar')
         <div class="content">

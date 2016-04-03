@@ -3,12 +3,148 @@ $black: #000;
 $white: #fff;
 $padding: 10px;
 
+$inset-default: -4px;
+$inset-hover: -10px;
+
+$brand-primary: #4caf50;
+$brand-success: #26a69a;
+$brand-info: #4fc3f7;
+$brand-danger: #d50000;
+$brand-warning: #ffc107;
+
+$navbar-default-bg: rgba(255, 255, 255, 0);
+$navbar-inverse-bg: rgba(255, 255, 255, 1);
+
 // Import Twitter Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 // Import Font Awesome
 @import "node_modules/font-awesome/scss/font-awesome";
 
+.banner-filler {
+    height: 44px;
+    background-size: cover;
+}
+
+.navbar-highlight {
+    top: -50px;
+}
+
+.navbar-toggle {
+    border: 0;
+    background-color: $white;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: $black;
+    text-transform: lowercase;
+    font-size: 18px;
+    font-family: Impact, Charcoal, sans-serif;
+    &:hover {
+        color: #110b0b;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+}
+
 .content {
-    padding-top: $padding;
-    padding-bottom: $padding;
+    padding-top: 0px;
+}
+
+@media (min-width: $screen-sm-min) {
+    .banner-filler {
+        height: 170px;
+        background-size: cover;
+    }
+    .navbar-highlight {
+        top: -50px;
+    }
+    .content {
+        padding-top: $padding;
+        padding-bottom: $padding;
+    }
+    .banner-filler {
+        height: 200px;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .navbar-highlight {
+        top: -50px;
+    }
+    .banner-filler {
+        height: 225px;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .navbar-highlight {
+        top: -50px;
+    }
+    .banner-filler {
+        height: 250px;
+    }
+}
+
+$navtext-home: #dce775;
+.navtext-home {
+    box-shadow: inset 0 $inset-default 0 $navtext-home;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $navtext-home;
+    }
+}
+
+$navtext-news: #d4e157;
+.navtext-news {
+    box-shadow: inset 0 $inset-default 0 $navtext-news;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $navtext-news;
+    }
+}
+
+$navtext-event: #cddc39;
+.navtext-events {
+    box-shadow: inset 0 $inset-default 0 $navtext-event;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $navtext-event;
+    }
+}
+
+$navtext-organizations: #c0ca33;
+.navtext-organizations {
+    box-shadow: inset 0 $inset-default 0 $navtext-organizations;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $navtext-organizations;
+    }
+}
+
+$navtext-recipients: #afb42b;
+.navtext-recipients {
+    box-shadow: inset 0 $inset-default 0 $navtext-recipients;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $navtext-recipients;
+    }
+}
+
+$navtext-volunteers: #9e9d24;
+.navtext-volunteers {
+    box-shadow: inset 0 $inset-default 0 $navtext-volunteers;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $navtext-volunteers;
+    }
+}
+
+$navtext-login: #827717;
+.navtext-login {
+    box-shadow: inset 0 $inset-default 0 $navtext-login;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $navtext-login;
+    }
+}
+
+$navtext-logout: #b71c1c;
+.navtext-logout {
+    box-shadow: inset 0 $inset-default 0 $navtext-logout;
+    &:hover {
+        box-shadow: inset 0 $inset-hover 0 $navtext-logout;
+    }
 }
