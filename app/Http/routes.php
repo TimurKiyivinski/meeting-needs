@@ -48,10 +48,67 @@ Route::group([
 ], function () {
     Route::get('/', [
         'as' => 'index',
-        'uses' => function() {
-            return view('index');
-        }
+        'uses' => 'HomeController@index'
     ]);
+
+    Route::get('/news', [
+        'as' => 'news',
+        'uses' => 'NewsController@index'
+    ]);
+    Route::get('/news/{id}', [
+        'as' => 'event.show',
+        'uses' => 'NewsController@show'
+    ])->where('id', '[0-9]+');
+
+    Route::get('/events', [
+        'as' => 'events',
+        'uses' => 'EventController@index'
+    ]);
+    Route::get('/events/{id}', [
+        'as' => 'event.show',
+        'uses' => 'EventController@show'
+    ])->where('id', '[0-9]+');
+
+    Route::get('/organizations', [
+        'as' => 'organizations',
+        'uses' => 'OrganizationController@index'
+    ]);
+    Route::get('/organizations/{id}', [
+        'as' => 'organization.show',
+        'uses' => 'OrganizationController@show'
+    ])->where('id', '[0-9]+');
+
+    Route::get('/recipients', [
+        'as' => 'recipients',
+        'uses' => 'RecipientController@index'
+    ]);
+    Route::get('/recipients/{id}', [
+        'as' => 'recipient.show',
+        'uses' => 'RecipientController@show'
+    ])->where('id', '[0-9]+');
+
+    Route::get('/organizations', [
+        'as' => 'organizations',
+        'uses' => 'OrganizationController@index'
+    ]);
+    Route::get('/organizations/{id}', [
+        'as' => 'organization.show',
+        'uses' => 'OrganizationController@show'
+    ])->where('id', '[0-9]+');
+});
+
+Route::group([
+    'middleware' => ['web', 'auth'],
+    'as' => 'app::'
+], function () {
+    Route::get('/volunteers', [
+        'as' => 'volunteers',
+        'uses' => 'VolunteerController@index'
+    ]);
+    Route::get('/volunteers/{id}', [
+        'as' => 'volunteer.show',
+        'uses' => 'VolunteerController@show'
+    ])->where('id', '[0-9]+');
 });
 
 Route::group([
