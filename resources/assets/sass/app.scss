@@ -2,6 +2,10 @@
 $black: #000;
 $white: #fff;
 $padding: 10px;
+$light-blue: #03A9F4;
+
+$navbar-default-bg: rgba(213, 0, 0, 100);
+$navbar-inverse-bg: rgba(213, 0, 0, 1);
 
 // Import Twitter Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -11,4 +15,22 @@ $padding: 10px;
 .content {
     padding-top: $padding;
     padding-bottom: $padding;
+}
+
+.alert-success{
+  color: #4CAF50;
+  background-color: #DCEDC8;
+}
+
+.alert-info{
+  color: #01579B;
+  background-color: #B2EBF2;
+}
+
+.alert-warning{
+
+}
+
+.alert-danger{
+
 }
