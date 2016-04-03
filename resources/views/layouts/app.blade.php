@@ -11,9 +11,9 @@
         <meta name="_token" content="{{ csrf_token() }}" />
     @endif
 </head>
-<body background="{{ asset('images/background.jpg') }}" style="height:100%;">
+<body style="height:100%;">
     <div class="wrapper">
-        <div class="banner-filler" style="background-image: url('{{ asset('images/banner.jpg') }}');"></div>
+        <div class="banner-filler" style="background-image: url('{{ isset($banner) ? asset($banner): asset('images/banner.jpg') }}');"></div>
         <!--Index navigation bar-->
         @include('templates.navbar')
         <div class="content">
@@ -21,8 +21,8 @@
         </div>
         <!--Default footer-->
         @include('templates.footer')
-        @yield('script_extra')
     </div>
     <script src="{{ asset('js/app.js') }}" ></script>
+    @yield('script_extra')
 </body>
 </html>

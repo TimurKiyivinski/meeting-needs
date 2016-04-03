@@ -1,3 +1,1 @@
-(function() {
-    console.log("Default function");
-})();
+console.log('app.js');

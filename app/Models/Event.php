@@ -24,8 +24,18 @@ class Event extends Model
      */
     protected $hidden = [];
 
+    public function photo()
+    {
+        return $this->belongsTo('App\Models\Photo');
+    }
+
     public function photos()
     {
         return $this->belongsToMany('App\Models\Photo', 'photo_events');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User', 'user_events');
     }
 }

@@ -15,13 +15,17 @@ $brand-warning: #ffc107;
 $navbar-default-bg: rgba(255, 255, 255, 0);
 $navbar-inverse-bg: rgba(255, 255, 255, 1);
 
+$border-radius-base: 0;
+$border-radius-small: 0;
+$border-radius-large: 0;
+
 // Import Twitter Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 // Import Font Awesome
 @import "node_modules/font-awesome/scss/font-awesome";
 
 .banner-filler {
-    height: 44px;
+    height: 150px;
     background-size: cover;
 }
 
@@ -47,6 +51,7 @@ $navbar-inverse-bg: rgba(255, 255, 255, 1);
 
 .content {
     padding-top: 0px;
+    padding-bottom: 60px;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -59,7 +64,6 @@ $navbar-inverse-bg: rgba(255, 255, 255, 1);
     }
     .content {
         padding-top: $padding;
-        padding-bottom: $padding;
     }
     .banner-filler {
         height: 200px;
@@ -80,7 +84,7 @@ $navbar-inverse-bg: rgba(255, 255, 255, 1);
         top: -50px;
     }
     .banner-filler {
-        height: 250px;
+        height: 350px;
     }
 }
 
@@ -146,4 +150,14 @@ $navtext-logout: #b71c1c;
     &:hover {
         box-shadow: inset 0 $inset-hover 0 $navtext-logout;
     }
+}
+
+.panel {
+    border: 0;
+    box-shadow: 2px 2px 2px #A1A1A1;
+}
+
+.panel-body-image {
+    background-size: cover;
+    height: 300px;
 }
