@@ -51,7 +51,7 @@ class RecipientController extends Controller
 
         $data = new Recipient;
         $data->name = $input['name'];
-        $data->data = $input['data'];
+        $data->description = $input['description'];
         $data->location_id = $input['location_id'];
         $data->save();
 
@@ -109,7 +109,7 @@ class RecipientController extends Controller
         else
         {
             $data->name = $input['name'];
-            $data->data = $input['data'];
+            $data->description = $input['description'];
             $data->location_id = $input['location_id'];
             $data->save();
 
