@@ -19,16 +19,21 @@ var paths = {
 
 elixir(function(mix) {
     mix.sass('app.scss');
+
     // Common JS
     mix.scripts([
         paths.jquery + "dist/jquery.js",
         paths.bootstrap + 'javascripts/bootstrap.js',
         'app.js',
     ], 'public/js/app.js');
-    mix.scripts([
-        'event.js',
-    ], 'public/js/event.js');
+
+    // Scripts
+    mix.scripts(['event.js',], 'public/js/event.js');
+
+    // Copy assets
     mix.copy(paths.bootstrap + 'fonts/**', 'public/fonts');
     mix.copy(paths.fontawesome + 'fonts/**', 'public/fonts');
+
+    // LiveReload view
     mix.livereload();
 });
